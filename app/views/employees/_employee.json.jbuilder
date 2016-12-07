@@ -8,3 +8,10 @@ if employee.email.end_with? "hotmail.com"
 else
   json.email employee.email
 end
+json.addresses employee.addresses.each do |address|
+  json.address_1 address.address_1
+  json.address_2 address.address_2
+  json.city address.city
+  json.state address.state
+  json.zip address.zip
+end
