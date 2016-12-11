@@ -24,7 +24,7 @@ class Api::V1::EmployeesController < ApplicationController
 
   def update
     @employee = Employee.find_by(id: params[:id])
-    @employee.first_name = params[:first_name] || @employee.first_name
+    @employee.first_name = params[:firstName] || @employee.first_name
     @employee.last_name = params[:last_name] || @employee.last_name
     @employee.birthdate = params[:birthdate] || @employee.birthdate
     @employee.email = params[:email] || @employee.email
