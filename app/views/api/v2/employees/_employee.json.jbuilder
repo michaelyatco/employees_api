@@ -3,7 +3,7 @@ json.firstName employee.first_name
 json.lastName employee.last_name
 json.fullName employee.full_name
 json.birthdate employee.birthdate
-if employee.email.end_with? "hotmail.com"
+if employee.email && employee.email.end_with?("hotmail.com")
   json.email employee.email + " (you should update your email address bro)"
 else
   json.email employee.email

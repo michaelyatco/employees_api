@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get "/employees", to: "employees#index"
+  post "/employees", to: "employees#create"
+  get "/employees/:id", to: "employees#show"
+
   namespace :api do
     namespace :v1 do
       get '/employees' => 'employees#index'

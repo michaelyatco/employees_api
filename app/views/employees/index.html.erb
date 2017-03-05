@@ -1,0 +1,32 @@
+<div ng-app="app">
+  <div ng-controller="employeesCtrl" ng-init="setup()">
+    <h1 class="animated infinite bounce">Number of Employees: {{ employees.length }}</h1>
+    <datalist id="names">
+      <option ng-repeat="employee in employees"> {{employee.firstName}}</option>
+    </datalist>
+    <input ng-model="filterFirstName">
+    <input ng-model="filterLastName">
+    <div>
+      <button ng-click="toggleOrder('firstName')">Order by First Name {{ sortArrow('firstName') }}</button>
+      <button ng-click="toggleOrder('lastName')">Order by Last Name {{ sortArrow('lastName') }}</button>
+    </div>
+<table style="width:100%">
+  <tr>
+    <th ng-click="toggleOrder('firstName')">First Name</th>
+    <th ng-click="toggleOrder('lastName')">Last Name</th>
+  </tr>
+    <!-- <div > -->
+  <tr ng-repeat="employee in employees | filter: { firstName: filterFirstName, lastName: filterLastName } | orderBy:orderAttribute:isDescending">      
+  <td>{{ employee.firstName }}</td>
+  <td>{{ employee.lastName }}</td> 
+  </tr>
+</table>       
+    <!-- </div> -->
+    <ul>
+      <li ng-repeat="error in errors">{{ error }}</li>
+    </ul>
+    <p>First Name: <input ng-model="inputFirstName"></p>
+    <p>Last Name: <input ng-model="inputLastName"></p>
+    <button ng-click="addEmployee(inputFirstName, inputLastName)"> Add person</button>
+  </div>
+</div>

@@ -12,9 +12,12 @@ class Api::V2::EmployeesController < ApplicationController
       email: params[:email],
       ssn: params[:ssn]
     )
-    @employee.save
+    if @employee.save
+      render "show.json.jbuilder"
+    else
+      render json: { errors: @employee.errors.full_messages }, status: 422
+    end
     # redirect_to "/employees/#{@employee.id}"
-    render 'show.json.jbuilder'
   end
 
   def show
