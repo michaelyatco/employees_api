@@ -20,19 +20,22 @@
           $scope.errors = error.data.errors;
         });
       };
+
       $scope.toggleOrder = function(attribute) {
         if (attribute !== $scope.orderAttribute) {
           $scope.isDescending = false;
         } else {
           $scope.isDescending = !$scope.isDescending;
         }
-        $scope.sortArrow = function(attribute) {
-          if (attribute === $scope.orderAttribute) {
-            return $scope.isDescending ? 'v' : '^';
-          } else {
-            return '';
-          }
-        };
+        $scope.orderAttribute = attribute;
+      };
+
+      $scope.sortArrow = function(attribute) {
+        if (attribute === $scope.orderAttribute) {
+          return $scope.isDescending ? 'v' : '^';
+        } else {
+          return '';
+        }
       };
     };
   });

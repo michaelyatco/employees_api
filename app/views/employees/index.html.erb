@@ -5,8 +5,8 @@
     <datalist id="names">
       <option ng-repeat="employee in employees"> {{employee.firstName}}</option>
     </datalist>
-    <input ng-model="filterFirstName">
-    <input ng-model="filterLastName">
+    First Name: <input ng-model="filterFirstName">
+    Last Name: <input ng-model="filterLastName">
     <div>
       <button ng-click="toggleOrder('firstName')">Order by First Name {{ sortArrow('firstName') }}</button>
       <button ng-click="toggleOrder('lastName')">Order by Last Name {{ sortArrow('lastName') }}</button>

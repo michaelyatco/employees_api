@@ -1,5 +1,5 @@
 /*global angular*/
-angular.module("app").filter("nameFilter", [function() {
+angular.module("filterNames", []).filter("nameFilter", [function() {
   return function(array) {
     if (array) {
       var longnames = [];
