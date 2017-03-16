@@ -17,7 +17,7 @@
     <th ng-click="toggleOrder('lastName')">Last Name</th>
   </tr>
     <!-- <div > -->
-  <tr ng-repeat="employee in employees | filter: { firstName: filterFirstName, lastName: filterLastName } | orderBy:orderAttribute:isDescending">      
+  <tr ng-repeat="employee in employees | nameFilter | orderBy:orderAttribute:isDescending">      
   <td>{{ employee.firstName }}</td>
   <td>{{ employee.lastName }}</td> 
   </tr>
