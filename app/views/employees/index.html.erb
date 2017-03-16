@@ -1,6 +1,7 @@
 <div ng-app="app">
   <div ng-controller="employeesCtrl" ng-init="setup()">
     <h1 class="animated infinite bounce">Number of Employees: {{ employees.length }}</h1>
+    <jack-spy-me-3></jack-spy-me-3>
     <datalist id="names">
       <option ng-repeat="employee in employees"> {{employee.firstName}}</option>
     </datalist>
